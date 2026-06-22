@@ -62,16 +62,27 @@ Instead of using the best possible next action, it updates the Q-value using the
 
 ---
 
-# Q-Learning vs SARSA
+## Q-Learning vs SARSA
 
 | Feature | Q-Learning | SARSA |
-|----------|------------|--------|
-| Learning Type | Off-Policy | On-Policy |
-| Update Rule | Uses max Q-value of next state | Uses next action actually taken |
-| Exploration | More aggressive | More conservative |
-| Learned Policy | Shortest path near the cliff | Safer path away from the cliff |
-| Risk | Higher | Lower |
+| :--- | :--- | :--- |
+| **Learning Type** | Off-Policy | On-Policy |
+| **Update Rule** | Uses max Q-value of next state | Uses next action actually taken |
+| **Exploration** | More aggressive | More conservative |
+| **Learned Policy**| Shortest path near the cliff | Safer path away from the cliff |
+| **Risk** | Higher | Lower |
 
+### Performance Metrics
+
+#### Cumulative Rewards per Episode
+Below is the comparison of cumulative rewards obtained by both agents over the training episodes. Notice how SARSA achieves a higher/more stable average reward during training because it avoids the cliff.
+
+![Cumulative Rewards](media/rewards.png)
+
+#### Steps per Episode
+Below is the comparison of the number of steps taken to reach the goal. Q-learning eventually finds a shorter path, but takes highly volatile steps during early training.
+
+![Steps per Episode](media/steps.png)
 ---
 
 # Project Structure
@@ -160,12 +171,12 @@ This project demonstrates:
 
 ---
 
-# Future Improvements
+## Future Improvements
 
-- Plot cumulative reward over training episodes
-- Compare convergence of both algorithms
-- Tune hyperparameters
-- Implement Expected SARSA
-- Extend to larger GridWorld environments
+- [x] Plot cumulative reward over training episodes
+- [x] Compare convergence of both algorithms
+- [ ] Tune hyperparameters
+- [ ] Implement Expected SARSA
+- [ ] Extend to larger GridWorld environments
 
 ---
